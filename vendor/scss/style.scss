@@ -1,0 +1,301 @@
+//ANCHOR import
+@import '_config.scss';
+//ANCHOR code header footer
+//ANCHOR header
+.header {
+    &-scroll {
+        position: fixed;
+        width: 100%;
+        background: white;
+        z-index: 2;
+        box-shadow: 0 2px 4px #0000001a;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+    transition: all 500ms;
+    &-left {
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 400;
+        }
+    }
+    &-right {
+        &--menu {
+            &__list {
+                display: flex;
+                &--item {
+                    font-size: 1.7rem;
+                    font-weight: 400;
+                    margin-left: 2rem;
+                    &.active {
+                        a {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+        &--icon__bars {
+            display: none;
+            cursor: pointer;
+            svg {
+                font-size: 2rem;
+            }
+        }
+    }
+    &-mobile {
+        &--show {
+            top: 11%;
+        }
+        background: white;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        box-shadow: 0 4px 4px #0000001a;
+        transition: all .4s;
+        position: fixed;
+        width: 100%;
+        top: -100%;
+        left: 0;
+        transition: all .4s;
+        &--menu__list {
+            color: black;
+            &--item {
+                text-align: center;
+                font-size: 1.7rem;
+                font-weight: 400;
+                padding-bottom: 10px;
+                &.icon-dark {
+                    cursor: pointer;
+                    position: absolute;
+                    right: 16%;
+                    transform: translateX(20%);
+                }
+                &.active {
+                    a {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section {
+    padding: 40px 0px;
+}
+
+.banner {
+    &-text {
+        &--notice {
+            font-size: 4rem;
+            color: $title-color;
+            font-weight: 500;
+            margin: 30px 0px;
+        }
+    }
+    &-img {
+        img {
+            width: 500px;
+        }
+    }
+}
+
+.d-ju-ali {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a.btn-click {
+    border-radius: 4px;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    background: $primary-color;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    &:hover {
+        color: white;
+        background: #09bf68;
+    }
+}
+
+//ANCHOR about-us
+.about-us {
+    &--img {
+        width: 380px;
+        border-radius: 10px;
+    }
+}
+
+//ANCHOR offer
+.offer {
+    &-box {
+        margin-top: 30px;
+        .icon {
+            font-size: 50px;
+            color: $primary-color;
+        }
+    }
+}
+
+//ANCHOR special
+.special {
+    &-box {
+        background: white;
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: 6px 6px 9px 4px #00000026;
+        position: relative;
+        margin-top: 30px;
+        &--img {
+            width: 130px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        &--bottom {
+            background: $primary-color;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 10px 20px;
+            border-top-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            svg {
+                font-size: 20px;
+                color: white;
+            }
+        }
+    }
+}
+
+//ANCHOR app 
+.app {
+    &-img {
+        width: 230px;
+        margin: 0 auto;
+    }
+}
+
+.app-store {
+    display: flex;
+    &--img {
+        width: 130px;
+    }
+}
+
+//ANCHOR button-cricle
+.button-cricle {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    background: $primary-color;
+    top: 50%;
+    right: 7%;
+    transform: translateY(-50%) translateX(36%);
+    border-radius: 7px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 10;
+    &.show-hide {
+        opacity: 1;
+        &::after {
+            position: absolute;
+            content: "\f062";
+            font-family: "Fontawesome";
+            color: white;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+}
+
+.button-cricle.show-hide::after {}
+
+//ANCHOR footer
+.footer {
+    &-box {
+        margin-top: 30px;
+    }
+    &--logo {
+        font-size: 2.5rem;
+        color: $primary-color;
+        font-weight: bold;
+    }
+    &-icon {
+        margin-right: 15px;
+        font-size: 2rem;
+    }
+    &-menu {
+        &--list {
+            &__item {
+                font-size: 1.8em;
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+// ANCHOR 769
+@media screen and (max-width:769px) {
+    h1 {
+        font-size: 3rem;
+    }
+    a.btn-click {
+        padding: 1rem 2rem;
+    }
+    .header-right {
+        display: none;
+        &--icon__bars {
+            display: block;
+        }
+    }
+    .about-us {
+        &--text {
+            margin-bottom: 20px;
+            order: -1;
+            text-align: center;
+        }
+    }
+}
+
+// ANCHOR 767 
+@media screen and (max-width:767px) {
+    .banner {
+        &-img {
+            width: 100%;
+            margin-top: 30px;
+            img {
+                width: 300px;
+                margin: 0 auto;
+            }
+        }
+        &-text--notice {
+            margin: 20px 0px;
+            font-size: 2rem;
+        }
+        &-container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+
+//ANCHOR 1200 
+@media screen and (max-width:1200px) {
+    .banner {
+        &-img {
+            img {
+                width: 300px;
+            }
+        }
+        &-text {
+            &--notice {
+                margin: 20px 0px;
+            }
+        }
+    }
+}

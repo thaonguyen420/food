@@ -1,0 +1,91 @@
+//ANCHOR color
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$title-color:#393939;
+$primary-color:#069c54;
+html {
+    font-size: 62.5%;
+}
+
+body {
+    line-height: 1.4;
+    color: #FBFEFD;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+a {
+    color: gray;
+    &:hover {
+        color: $primary-color;
+        text-decoration: none;
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: gray;
+}
+
+h2 {
+    color: $primary-color;
+    font-size: 2.4rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 3rem;
+    color: $title-color;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $title-color;
+}
+
+h5 {
+    font-size: 3rem;
+    color: $title-color;
+    font-weight: bold;
+}
+
+p {
+    font-size: 2rem;
+    line-height: 2;
+}
+
+span {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $title-color;
+}
+
+//ANCHOR mixin
