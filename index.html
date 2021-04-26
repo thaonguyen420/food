@@ -51,7 +51,7 @@
         <div class="container">
             <ul class="header-mobile--menu__list">
                 <li class="header-mobile--menu__list--item icon-dark">
-                    <i class="fas fa-laptop"></i>
+                    <img src="vendor/img/sun.png" alt="" class="icon-dark--img">
                 </li>
                 <li class="header-mobile--menu__list--item active">
                     <a href="">Home</a>
@@ -254,6 +254,19 @@
         function myFunction() {
             var header_mobile = document.querySelector('.header-mobile');
             header_mobile.classList.toggle('header-mobile--show')
+        }
+        var setTheme = localStorage.getItem('theme')
+        console.log('theme:', setTheme)
+
+        if (setTheme == null) {
+            swapStyle('light.css')
+        } else {
+            swapStyle(setTheme)
+        }
+
+        function swapStyle(sheet) {
+            document.getElementById('mystylesheet').href = sheet
+            localStorage.setItem('theme', sheet)
         }
         $(document).ready(function() {
             $(".button-cricle").click(function() {
